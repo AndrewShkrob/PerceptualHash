@@ -24,7 +24,7 @@ class ComparedObjects
     end
     
     if !["audio", "image", "text", "video"].flatten.include?(@file1_type)
-      "Byte"
+      "byte"
     else
       @file1_type
     end
@@ -41,7 +41,7 @@ class ComparedObjects
     when "image"
       (Comparator.compare_image(@file1, @file2) * 100).round
     when "text"
-      Comparator.compare_text(@file1, @file2)
+      (Comparator.compare_text(@file1, @file2) * 100).round
     when "video"
       (Comparator.compare_video(@file1, @file2) * 100).round
     else
